@@ -4,13 +4,13 @@ import tw from 'twin.macro'
 
 import blob from '../../../assets/blob.svg'
 import poster from '../../../assets/images/mclaren-orange-big.png'
+import Button from '../../components/buttons/Button'
 import { SCREENS } from '../../components/responsive/responsive'
 
-
 const Wrapper = styled.div`
-min-height:100vh;
-margin-top: 6em;
-${tw`
+  min-height: 400px;
+  margin-top: 6em;
+  ${tw`
   w-full
   max-w-screen-2xl
   flex
@@ -23,7 +23,7 @@ ${tw`
 `
 
 const LeftContainer = styled.div`
-${tw`
+  ${tw`
   w-1/2
   flex
   flex-col
@@ -31,7 +31,7 @@ ${tw`
 `
 
 const RightContainer = styled.div`
-${tw`
+  ${tw`
   w-1/2
   flex
   flex-col
@@ -40,7 +40,7 @@ ${tw`
 `}
 `
 const IntroText = styled.h1`
-${tw`
+  ${tw`
   font-bold
   text-2xl
   xl:text-6xl
@@ -57,7 +57,7 @@ ${tw`
 `
 
 const Description = styled.p`
-${tw`
+  ${tw`
   text-xs
   lg:text-lg
   xl:text-lg
@@ -76,19 +76,19 @@ const BlobContainer = styled.div`
   z-index: -1;
   transform: rotate(-30deg);
 
-  img{
+  img {
     width: 100%;
     height: auto;
     max-height: max-content;
   }
-  @media (min-width : ${SCREENS.sm}){
+  @media (min-width: ${SCREENS.sm}) {
     width: 40em;
     max-height: 10em;
     right: -9em;
     top: -16em;
     transform: rotate(-25deg);
   }
-  @media (min-width : ${SCREENS.lg}){
+  @media (min-width: ${SCREENS.lg}) {
     width: 50em;
     max-height: 30em;
     right: -7em;
@@ -96,7 +96,7 @@ const BlobContainer = styled.div`
     transform: rotate(-30deg);
   }
 
-@media (min-width : ${SCREENS.xl}){
+  @media (min-width: ${SCREENS.xl}) {
     width: 70em;
     max-height: 30em;
     right: -15em;
@@ -112,47 +112,55 @@ const Car = styled.div`
   top: -5em;
   position: absolute;
   overflow: hidden;
-  img{
+  img {
     width: auto;
     height: 100%;
     max-width: fit-content;
   }
-  @media (min-width : ${SCREENS.sm}){
+  @media (min-width: ${SCREENS.sm}) {
     height: 16em;
     right: -6em;
     top: -6em;
   }
-  @media (min-width : ${SCREENS.lg}){
+  @media (min-width: ${SCREENS.lg}) {
     height: 21em;
     right: -8em;
     top: -5em;
   }
-  @media (min-width : ${SCREENS.xl}){
+  @media (min-width: ${SCREENS.xl}) {
     height: 30em;
     right: -13em;
     top: -9em;
   }
-  
+`
+const ButtonWrapper = styled.div`
+  ${tw`
+    flex
+    mt-4
+    flex-wrap
+  `}
 `
 
 const TopSections = () => {
   return (
     <Wrapper>
       <LeftContainer>
-        <IntroText>
-          Welcome to JBH Global
-        </IntroText>
+        <IntroText>Welcome to JBH Global.</IntroText>
         <Description>
-        Do you have any need to travel with ease this 
-        season or you have some special events around india?
+          Do you have any need to travel with ease this season or you have some
+          special events around india?
         </Description>
+        <ButtonWrapper>
+          <Button text='Book a ride' />
+          <Button theme='filled' text='Take a tour' />
+        </ButtonWrapper>
       </LeftContainer>
       <RightContainer>
         <BlobContainer>
-          <img src={blob} alt="blob"/>
+          <img src={blob} alt='blob' />
         </BlobContainer>
         <Car>
-          <img src={poster} alt="jbh"/>
+          <img src={poster} alt='jbh' />
         </Car>
       </RightContainer>
     </Wrapper>
