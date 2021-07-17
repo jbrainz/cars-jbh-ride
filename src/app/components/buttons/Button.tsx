@@ -4,6 +4,7 @@ import tw from 'twin.macro'
 interface ButtonProps {
   theme?: 'filled' | 'outline'
   text: string
+  className?: string
 }
 
 const Wrapper = styled.button`
@@ -56,12 +57,12 @@ const FilledButton = styled(Wrapper)`
 `
 
 const Button = (props: ButtonProps) => {
-  const { theme, text } = props
+  const { theme, text, className } = props
 
   if (theme === 'filled') {
-    return <FilledButton>{text}</FilledButton>
+    return <FilledButton className={className}>{text}</FilledButton>
   } else {
-    return <OutlineButton>{text}</OutlineButton>
+    return <OutlineButton className={className}>{text}</OutlineButton>
   }
 }
 
