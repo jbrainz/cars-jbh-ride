@@ -53,7 +53,7 @@ const Footer = () => {
           <Logo color='white' />
           <AboutText>
             JBH is India's tempo traveller service provider and one of the best
-            rental services u can get
+            rental services u can get, safer rides across india.
           </AboutText>
         </AboutContainer>
       </InnerContainer>
