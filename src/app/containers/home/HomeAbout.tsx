@@ -2,7 +2,12 @@ import styled from 'styled-components'
 import tw from 'twin.macro'
 import { SCREENS } from '../../components/responsive/responsive'
 
-import jeepImg from '../../../assets/images/jeep.png'
+
+interface IDetails {
+  title: string
+  img: string
+  description: string
+}
 
 const Container = styled.div`
   ${tw`
@@ -26,7 +31,7 @@ const CarContainer = styled.div`
   height: 15em;
   margin-left: -30px;
   img {
-    width: auto;
+    width: 40em;
     height: 100%;
   }
 
@@ -75,26 +80,16 @@ const InfoText = styled.div`
 `}
 `
 
-const HomeAbout = () => {
+const HomeAbout = ({title, description, img}: IDetails) => {
   return (
     <Container>
       <CarContainer>
-        <img src={jeepImg} alt='car-about' />
+        <img src={img} alt='car-about' />
       </CarContainer>
       <Infocontainer>
-        <Title>The Best Travel Experience In India</Title>
+        <Title>{title}</Title>
         <InfoText>
-          JBH Global tour and travels formerly Aghori Tour & travels has been
-          firmed in 2014 as JBH GLOBAL with the objective of “providing
-          excellent travel  & car hire services to Industrial
-          Houses/ Corporate Sectors, BPO (Call Centres) etc. With the growth in
-          Indian economy the organization has grown at a very fast pace, and
-          with a fleet of more than 15 cabs (cng/Diesel) and 17 Tempo Travelers
-          for ETS and above 35 cars for car rental services. The company has
-          established itself in Delhi NCR, as an Employee Transport Service
-          Provider of first choice and has also been catering to BPO’s and MNCs
-          to their full satisfaction, but now we are working on PAN INDIA basis
-          with branch offices in multiple cities.
+          {description}
         </InfoText>
       </Infocontainer>
     </Container>
