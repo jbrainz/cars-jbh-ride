@@ -42,7 +42,7 @@ const Logo = ({ color }: ILogoProps) => {
       <Image>
         <img src={CarLogoImage} alt='jbh' />
       </Image>
-      <LogoText color={color || 'dark'}>JBH Global</LogoText>
+      <LogoText color={color || 'dark'}>JBH GLOBAL</LogoText>
     </LogoContainer>
   )
 }
