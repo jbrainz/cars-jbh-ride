@@ -117,8 +117,8 @@ const TopCars = () => {
             },
           ]}
         >
-          {cars.map((car) => (
-            <Cars {...car} />
+          {cars.map((car,idx) => (
+            <Cars key={idx} {...car} />
           ))}
         </Carousel>
         <Dots value={current} onChange={setCurrent} number={numberOfDots} />
