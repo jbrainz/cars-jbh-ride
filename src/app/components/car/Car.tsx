@@ -58,17 +58,17 @@ const PricesContainer = styled.div`
   `}
 `
 
-const SmallText = styled.p`
-  color: inherit;
+// const SmallText = styled.p`
+//   color: inherit;
 
-  ${tw`
-    text-xs
-    font-semibold
-    flex
-  `}
-`
+//   ${tw`
+//     text-xs
+//     font-semibold
+//     flex
+//   `}
+// `
 
-const ShortDescription = styled.h5`
+const ShortDescription = styled.div`
   ${tw`
     text-gray-800
     font-thin

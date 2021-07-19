@@ -5,6 +5,8 @@ import NavItems from "./Navitems"
 
 const NavbarContainer = styled.div`
   min-height: 68px;
+  position: fixed;
+  z-index: 1;
   ${tw`
   w-full
   max-w-screen-2xl
