@@ -10,14 +10,14 @@ export class CarsService {
 
   public async getAllCars(): Promise<Car[]> {
     return await this.carRepository.find({}).catch((err) => {
-      throw new InternalServerErrorException();
+      throw new InternalServerErrorException(err);
     });
   }
 
   public async addCar(newCarData: NewCarInput): Promise<Car> {
     const newCar = this.carRepository.create(newCarData);
     await this.carRepository.save(newCar).catch((err) => {
-      new InternalServerErrorException();
+      new InternalServerErrorException(err);
     });
     return newCar;
   }
