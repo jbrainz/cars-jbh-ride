@@ -9,22 +9,19 @@ export class NewCarInput {
   @Field((type) => Int)
   @Max(20000)
   @Min(1500)
-  monthlyPrice: number;
+  fareRate: number;
 
   @Field((type) => Int)
   @Max(1000)
   @Min(10, { message: "Daily price can't be that low!" })
-  dailyPrice: number;
+  driverRate: number;
 
   @Field()
   mileage: string;
 
   @Field()
-  gas: string;
+  speed: string;
 
   @Field()
-  gearType: string;
-
-  @Field()
-  thumbnailUrl: string;
+  thumbnailsSrc: string;
 }

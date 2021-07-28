@@ -14,11 +14,11 @@ export class Car {
 
   @Column()
   @Field()
-  dailyPrice: number;
+  fareRate: number;
 
   @Column()
   @Field()
-  monthlyPrice: number;
+  driverRate: number;
 
   @Column()
   @Field()
@@ -26,13 +26,9 @@ export class Car {
 
   @Column()
   @Field()
-  gas: string;
+  speed: string;
 
   @Column()
   @Field()
-  gearType: string;
-
-  @Column()
-  @Field()
-  thumbnailUrl: string;
+  thumbnailsSrc: string;
 }
