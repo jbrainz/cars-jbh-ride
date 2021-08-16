@@ -4,9 +4,10 @@ import Carousel, { Dots, slidesToShowPlugin } from '@brainhubeu/react-carousel'
 import '@brainhubeu/react-carousel/lib/style.css'
 
 import Cars from '../../components/car/Car'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { SCREENS } from '../../components/responsive/responsive'
 import { useMediaQuery } from 'react-responsive'
+import carService from '../../services/car-service'
 
 const TopCarsContainer = styled.div`
   ${tw`
@@ -23,6 +24,12 @@ const TopCarsContainer = styled.div`
     mb-10
   `};
 `
+const fetchTopCars = async () => {
+  const cars = await carService.getCars().catch((err) => {
+    console.log('Error: ', err)
+  })
+  console.log('Cars: ', cars)
+}
 
 const cars = [
   {
@@ -94,7 +101,11 @@ const CarsContainer = styled.div`
 
 const TopCars = () => {
   const [current, setCurrent] = useState(0)
- 
+
+  useEffect(() => {
+    fetchTopCars()
+  }, [])
+
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm })
   const isTablet = useMediaQuery({ maxWidth: SCREENS.md })
 
@@ -117,7 +128,7 @@ const TopCars = () => {
             },
           ]}
         >
-          {cars.map((car,idx) => (
+          {cars.map((car, idx) => (
             <Cars key={idx} {...car} />
           ))}
         </Carousel>
