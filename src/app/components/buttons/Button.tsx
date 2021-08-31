@@ -38,7 +38,6 @@ const OutlineButton = styled(Wrapper)`
   }
   ${tw`
   hover:bg-transparent
-
 `}
 `
 
@@ -52,7 +51,6 @@ const FilledButton = styled(Wrapper)`
   bg-transparent
   hover:border-transparent
   hover:text-white
-
 `}
 `
 
